@@ -6,15 +6,15 @@ import android.view.View;
 public class Stats {
 
     public static double Chi2(int a,int b, int c,int d) {
-        int Ra = a;
-        int Rb = b;
-        int Rc = c;
-        int Rd = d;
-        int row1 = Ra + Rb;
-        int row2 = Rc + Rd;
-        int column1 = Ra + Rc;
-        int column2 = Rb + Rd;
-        int total = Ra + Rb + Rc + Rd;
+        double Ra = a;
+        double Rb = b;
+        double Rc = c;
+        double Rd = d;
+        double row1 = Ra + Rb;
+        double row2 = Rc + Rd;
+        double column1 = Ra + Rc;
+        double column2 = Rb + Rd;
+        double total = Ra + Rb + Rc + Rd;
         double väntatvärdeRa = (row1 + column1)/total;
         double väntatvärdeRb = (row1 + column2)/total;
         double väntatvärdeRc = (row2 + column1)/total;
@@ -28,7 +28,7 @@ public class Stats {
 
 
 
-    public static double pVarde(View view){
+    public static double pVarde(double chi2){
         double pVarde;
         //if(){
 

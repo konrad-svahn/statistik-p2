@@ -79,5 +79,18 @@ public class MainActivity extends AppCompatActivity {
                Integer.parseInt(button3.getText().toString()),
                Integer.parseInt(button4.getText().toString())
        );
+        statsview.setText(String.format("%s %.2f\n%s: %.2f\n%s",
+                "Chi2",Stats.Chi2(Integer.parseInt(button1.getText().toString()),
+                        Integer.parseInt(button2.getText().toString()),
+                        Integer.parseInt(button3.getText().toString()),
+                        Integer.parseInt(button4.getText().toString()))
+                ,"p värde",Stats.pVarde(Stats.Chi2(Integer.parseInt(button1.getText().toString()),
+                Integer.parseInt(button2.getText().toString()),
+                Integer.parseInt(button3.getText().toString()),
+                Integer.parseInt(button4.getText().toString())))
+                ,"signifikans nivå"
+        ));
+
+
     }
 }
