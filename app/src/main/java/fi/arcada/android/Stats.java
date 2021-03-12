@@ -6,23 +6,19 @@ import android.view.View;
 public class Stats {
 
     public static double Chi2(int a,int b, int c,int d) {
-        double Ra = a;
-        double Rb = b;
-        double Rc = c;
-        double Rd = d;
-        double row1 = Ra + Rb;
-        double row2 = Rc + Rd;
-        double column1 = Ra + Rc;
-        double column2 = Rb + Rd;
-        double total = Ra + Rb + Rc + Rd;
+        double row1 = a + b;
+        double row2 = c + d;
+        double column1 = a + c;
+        double column2 = b + d;
+        double total = a + b + c + d;
         double väntatvärdeRa = (row1 * column1)/total;
         double väntatvärdeRb = (row1 * column2)/total;
         double väntatvärdeRc = (row2 * column1)/total;
         double väntatvärdeRd = (row2 * column2)/total;
-        double chi2a = Math.pow(Ra - väntatvärdeRa ,2)/väntatvärdeRa;
-        double chi2b = Math.pow(Rb - väntatvärdeRb,2)/väntatvärdeRb;
-        double chi2c = Math.pow(Rc - väntatvärdeRc,2)/väntatvärdeRc;
-        double chi2d = Math.pow(Rd - väntatvärdeRd,2)/väntatvärdeRd;
+        double chi2a = Math.pow(a - väntatvärdeRa ,2)/väntatvärdeRa;
+        double chi2b = Math.pow(b - väntatvärdeRb,2)/väntatvärdeRb;
+        double chi2c = Math.pow(c - väntatvärdeRc,2)/väntatvärdeRc;
+        double chi2d = Math.pow(d - väntatvärdeRd,2)/väntatvärdeRd;
         double chi2 = chi2a + chi2b + chi2c + chi2d;
         return chi2;}
 
@@ -52,7 +48,20 @@ public class Stats {
             pVarde=0.005;
         }else if(chi2 >= 9.550 && chi2 < 10.828) {
             pVarde=0.001;
-        }else{ pVarde=0.0;}
+        }else if(chi2 >= 10.828){
+            pVarde=0.0;
+        }else { pVarde=1.0;}
         return pVarde;
+    }
+
+    public static double andel1(int a, int c){
+        double column1 = a + c;
+        double numYes = a/column1;
+        return numYes*100;
+    }
+    public static double andel2(int b, int d){
+        double column2 = b + d;
+        double numYes = b/column2;
+        return numYes*100;
     }
 }

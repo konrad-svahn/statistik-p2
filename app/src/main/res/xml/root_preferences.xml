@@ -4,8 +4,29 @@
 
         <EditTextPreference
             app:key="textsetting"
-            app:title="text setting"
+            app:title="signifikansnivå"
             app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="textsetting1"
+            app:title="text1"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+        app:key="textsetting2"
+        app:title="text2"
+        app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="textsetting3"
+            app:title="text3"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="textsetting4"
+            app:title="text4"
+            app:useSimpleSummaryProvider="true" />
+
 
         <ListPreference
             app:defaultValue="reply"
