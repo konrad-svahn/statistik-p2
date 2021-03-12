@@ -73,6 +73,16 @@ public class MainActivity extends AppCompatActivity {
            prefeditor.putString("b4", String.valueOf(knapvarde + 1));
            prefeditor.apply();
            button4.setText(pref.getString("b4","0"));
+    }else if(view.getId()== R.id.clear){
+           prefeditor.putString("b1", String.valueOf(0));
+           prefeditor.putString("b2", String.valueOf(0));
+           prefeditor.putString("b3", String.valueOf(0));
+           prefeditor.putString("b4", String.valueOf(0));
+           prefeditor.apply();
+           button1.setText(pref.getString("b1","0"));
+           button2.setText(pref.getString("b2","0"));
+           button3.setText(pref.getString("b3","0"));
+           button4.setText(pref.getString("b4","0"));
        }
        Stats.Chi2(Integer.parseInt(button1.getText().toString()),
                Integer.parseInt(button2.getText().toString()),
